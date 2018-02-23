@@ -15,7 +15,7 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --progress --colors --config ./webpack.config.js",
+    "start": "webpack -d --watch",
     "server": "nodemon ./server/index.js",
     "seed": "knex seed:run"
   },
@@ -24,6 +24,7 @@
     "faker": "^4.1.0",
     "knex": "^0.14.4",
     "pg": "^6.4.2",
+    "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },

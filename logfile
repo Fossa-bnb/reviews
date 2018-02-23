@@ -1,0 +1,48 @@
+2018-02-22 10:36:09.744 PST [32559] LOG:  listening on IPv6 address "::1", port 5432
+2018-02-22 10:36:09.745 PST [32559] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-02-22 10:36:09.746 PST [32559] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-02-22 10:36:09.763 PST [32560] LOG:  database system was shut down at 2018-02-22 10:36:04 PST
+2018-02-22 10:36:09.768 PST [32559] LOG:  database system is ready to accept connections
+2018-02-22 11:56:11.303 PST [36060] FATAL:  database "todo" does not exist
+2018-02-22 11:59:17.749 PST [36162] ERROR:  syntax error at or near "PRIVELEGES" at character 11
+2018-02-22 11:59:17.749 PST [36162] STATEMENT:  GRANT ALL PRIVELEGES ON DATABASE todo TO reviews;
+2018-02-22 11:59:44.926 PST [36162] ERROR:  database "todos" does not exist
+2018-02-22 11:59:44.926 PST [36162] STATEMENT:  GRANT ALL PRIVILEGES ON DATABASE todos TO reviews;
+2018-02-22 12:26:14.892 PST [36264] ERROR:  syntax error at or near "hel" at character 1
+2018-02-22 12:26:14.892 PST [36264] STATEMENT:  hel
+	help
+	;
+2018-02-22 15:36:03.038 PST [41503] ERROR:  relation "products" does not exist at character 15
+2018-02-22 15:36:03.038 PST [41503] STATEMENT:  SELECT * FROM products;
+2018-02-22 15:46:43.493 PST [41503] ERROR:  cannot drop the currently open database
+2018-02-22 15:46:43.493 PST [41503] STATEMENT:  DROP DATABASE merch;
+2018-02-22 16:19:18.508 PST [43151] ERROR:  column "id" specified more than once
+2018-02-22 16:19:18.508 PST [43151] STATEMENT:  create table "rooms" ("id" serial primary key, "id" integer)
+2018-02-22 16:19:18.515 PST [43151] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2018-02-22 16:19:18.515 PST [43151] STATEMENT:  update "knex_migrations_lock" set "is_locked" = $1
+2018-02-22 16:38:21.987 PST [43826] ERROR:  table "reviews" does not exist
+2018-02-22 16:38:21.987 PST [43826] STATEMENT:  DROP TABLE reviews;
+2018-02-22 19:37:33.808 PST [46092] ERROR:  column "photoUrl" of relation "users" does not exist at character 30
+2018-02-22 19:37:33.808 PST [46092] STATEMENT:  insert into "users" ("name", "photoUrl") values ($1, $2), ($3, $4), ($5, $6), ($7, $8), ($9, $10), ($11, $12), ($13, $14), ($15, $16), ($17, $18), ($19, $20), ($21, $22), ($23, $24), ($25, $26), ($27, $28), ($29, $30), ($31, $32), ($33, $34), ($35, $36), ($37, $38), ($39, $40), ($41, $42), ($43, $44), ($45, $46), ($47, $48), ($49, $50), ($51, $52), ($53, $54), ($55, $56), ($57, $58), ($59, $60), ($61, $62), ($63, $64), ($65, $66), ($67, $68), ($69, $70), ($71, $72), ($73, $74), ($75, $76), ($77, $78), ($79, $80), ($81, $82), ($83, $84), ($85, $86), ($87, $88), ($89, $90), ($91, $92), ($93, $94), ($95, $96), ($97, $98), ($99, $100), ($101, $102), ($103, $104), ($105, $106), ($107, $108), ($109, $110), ($111, $112), ($113, $114), ($115, $116), ($117, $118), ($119, $120), ($121, $122), ($123, $124), ($125, $126), ($127, $128), ($129, $130), ($131, $132), ($133, $134), ($135, $136), ($137, $138), ($139, $140), ($141, $142), ($143, $144), ($145, $146), ($147, $148), ($149, $150), ($151, $152), ($153, $154), ($155, $156), ($157, $158), ($159, $160), ($161, $162), ($163, $164), ($165, $166), ($167, $168), ($169, $170), ($171, $172), ($173, $174), ($175, $176), ($177, $178), ($179, $180), ($181, $182), ($183, $184), ($185, $186), ($187, $188), ($189, $190), ($191, $192), ($193, $194), ($195, $196), ($197, $198), ($199, $200)
+2018-02-22 19:37:33.817 PST [46092] LOG:  could not receive data from client: Connection reset by peer
+2018-02-22 19:43:47.238 PST [46340] ERROR:  column "id" of relation "rooms" does not exist at character 22
+2018-02-22 19:43:47.238 PST [46340] STATEMENT:  insert into "rooms" ("id") values ($1), ($2), ($3), ($4), ($5), ($6), ($7), ($8), ($9), ($10), ($11), ($12), ($13), ($14), ($15), ($16), ($17), ($18), ($19), ($20), ($21), ($22), ($23), ($24), ($25), ($26), ($27), ($28), ($29), ($30), ($31), ($32), ($33), ($34), ($35), ($36), ($37), ($38), ($39), ($40), ($41), ($42), ($43), ($44), ($45), ($46), ($47), ($48), ($49), ($50), ($51), ($52), ($53), ($54), ($55), ($56), ($57), ($58), ($59), ($60), ($61), ($62), ($63), ($64), ($65), ($66), ($67), ($68), ($69), ($70), ($71), ($72), ($73), ($74), ($75), ($76), ($77), ($78), ($79), ($80), ($81), ($82), ($83), ($84), ($85), ($86), ($87), ($88), ($89), ($90), ($91), ($92), ($93), ($94), ($95), ($96), ($97), ($98), ($99), ($100)
+2018-02-22 19:43:47.247 PST [46340] LOG:  could not receive data from client: Connection reset by peer
+2018-02-23 11:40:00.429 PST [52758] ERROR:  update or delete on table "rooms" violates foreign key constraint "reviews_room_id_foreign" on table "reviews"
+2018-02-23 11:40:00.429 PST [52758] DETAIL:  Key (room_id)=(0) is still referenced from table "reviews".
+2018-02-23 11:40:00.429 PST [52758] STATEMENT:  delete from "rooms"
+2018-02-23 11:40:00.446 PST [52758] LOG:  could not receive data from client: Connection reset by peer
+2018-02-23 11:43:44.138 PST [52904] ERROR:  relation "rooms" does not exist at character 13
+2018-02-23 11:43:44.138 PST [52904] STATEMENT:  delete from "rooms"
+2018-02-23 11:43:59.711 PST [52920] ERROR:  there is no unique constraint matching given keys for referenced table "users"
+2018-02-23 11:43:59.711 PST [52920] STATEMENT:  alter table "reviews" add constraint "reviews_user_id_foreign" foreign key ("user_id") references "users" ("user_id")
+2018-02-23 11:43:59.716 PST [52920] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2018-02-23 11:43:59.716 PST [52920] STATEMENT:  update "knex_migrations_lock" set "is_locked" = $1
+2018-02-23 11:49:21.272 PST [53155] ERROR:  update or delete on table "rooms" violates foreign key constraint "reviews_room_id_foreign" on table "reviews"
+2018-02-23 11:49:21.272 PST [53155] DETAIL:  Key (room_id)=(0) is still referenced from table "reviews".
+2018-02-23 11:49:21.272 PST [53155] STATEMENT:  delete from "rooms"
+2018-02-23 11:49:21.286 PST [53155] LOG:  could not receive data from client: Connection reset by peer
+2018-02-23 12:07:13.252 PST [53222] ERROR:  syntax error at or near "GET" at character 1
+2018-02-23 12:07:13.252 PST [53222] STATEMENT:  GET * FROM reviews WHERE (user_id === 2);
+2018-02-23 12:07:34.479 PST [53222] ERROR:  syntax error at or near "WHERE" at character 24
+2018-02-23 12:07:34.479 PST [53222] STATEMENT:  SELECT * FROM reviews (WHERE user_id == 3);

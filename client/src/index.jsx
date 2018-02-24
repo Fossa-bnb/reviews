@@ -18,9 +18,11 @@ class App extends React.Component {
     return (
       <div className="reviews">
         Listing id: {this.state.roomId}
-        <ReviewsCount /> <OverallStars /> <Search />
-        <Ratings />
-        <ReviewsList />
+        <ReviewsCount roomId={this.state.roomId} />
+        <OverallStars roomId={this.state.roomId} />
+        <Search roomId={this.state.roomId} />
+        <Ratings roomId={this.state.roomId} />
+        <ReviewsList roomId={this.state.roomId} />
       </div>
     );
   }

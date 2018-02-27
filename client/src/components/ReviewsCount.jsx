@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 
 const ReviewsCount = props => (
   <div className="ReviewsCount">
-    Reviews Count Component for room {props.roomId}
+    {props.count} Reviews
   </div>
 );
 
 ReviewsCount.propTypes = {
-  roomId: PropTypes.number.isRequired,
+  // roomId: PropTypes.number.isRequired,
+  count: PropTypes.number.isRequired,
 };
 
 export default ReviewsCount;

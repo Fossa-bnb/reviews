@@ -24,10 +24,15 @@
     "database": "psql postgres"
   },
   "jest": {
-    "setupFiles": ["./client/src/jest-setup.js"],
-    "snapshotSerializers": ["enzyme-to-json/serializer"]
+    "setupFiles": [
+      "./client/src/jest-setup.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-jest": "^22.4.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",

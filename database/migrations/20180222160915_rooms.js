@@ -10,7 +10,7 @@ exports.up = function create(knex, Promise) {
       table.string('photo_url');
     }),
     knex.schema.createTable('reviews', (table) => {
-      table.integer('review_id');
+      table.increments('review_id');
       table.integer('room_id');
       table.integer('accuracy');
       table.integer('communication');

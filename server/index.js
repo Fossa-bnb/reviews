@@ -4,7 +4,7 @@ const reviews = require('./reviews');
 const app = express();
 
 app.use(express.static(__dirname.concat('/../client/dist')));
-app.use('/', reviews);
+app.use('/rooms', reviews);
 
 // app.get('/', (req, res) => res.send('Hello World!'));
 

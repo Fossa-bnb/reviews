@@ -3,13 +3,8 @@ const db = require('../database/index');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.send('reviews home');
-});
-
-router.get('/allReviews', (req, res) => {
-  console.log('fetching reviews!');
-  db.fetchReviews(3, (reviews) => {
+router.get('/:roomId/reviews', (req, res) => {
+  db.fetchReviews(req.params.roomId, (reviews) => {
     res.send(reviews);
   });
 });

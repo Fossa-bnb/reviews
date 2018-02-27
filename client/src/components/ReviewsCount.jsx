@@ -8,7 +8,6 @@ const ReviewsCount = props => (
 );
 
 ReviewsCount.propTypes = {
-  // roomId: PropTypes.number.isRequired,
   count: PropTypes.number.isRequired,
 };
 

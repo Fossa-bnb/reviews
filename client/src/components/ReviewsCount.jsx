@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ReviewsCount = props => (
-  <div>
+  <div className="ReviewsCount">
     Reviews Count Component for room {props.roomId}
   </div>
 );

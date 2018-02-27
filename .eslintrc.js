@@ -9,6 +9,10 @@ module.exports = {
   extends: './node_modules/eslint-config-hackreactor/index.js',
   "extends": "airbnb",
   "env": {
-    "browser": true
+    "browser": true,
+    "jest": true,
+  },
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   }
 };

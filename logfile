@@ -46,3 +46,7 @@
 2018-02-23 12:07:13.252 PST [53222] STATEMENT:  GET * FROM reviews WHERE (user_id === 2);
 2018-02-23 12:07:34.479 PST [53222] ERROR:  syntax error at or near "WHERE" at character 24
 2018-02-23 12:07:34.479 PST [53222] STATEMENT:  SELECT * FROM reviews (WHERE user_id == 3);
+2018-02-23 19:42:17.951 PST [32559] LOG:  received smart shutdown request
+2018-02-23 19:42:17.954 PST [32559] LOG:  worker process: logical replication launcher (PID 32566) exited with exit code 1
+2018-02-23 19:42:17.954 PST [32561] LOG:  shutting down
+2018-02-23 19:42:17.971 PST [32559] LOG:  database system is shut down

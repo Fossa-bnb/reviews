@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Subrating from './Subrating';
 
 const Ratings = ({
-  accuracy, checkIn, cleanliness, communication, location, value 
+  accuracy, checkIn, cleanliness, communication, location, value,
 }) => (
   <div>
     Ratings Component

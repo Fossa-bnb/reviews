@@ -25,6 +25,5 @@ describe('<Ratings /> Component', () => {
   it('should pass down each subrating to the appropriate subcomponent', () => {
     const wrapper = shallow(<Ratings ratings={ratingsObj} />);
     expect(wrapper.find('Subrating').at(0).prop('rating')).toEqual(3.782);
-    // console.log(wrapper.debug());
   });
 });

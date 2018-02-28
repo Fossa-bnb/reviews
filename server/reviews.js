@@ -6,8 +6,9 @@ const router = express.Router();
 const calculateRatingByCategory = (category, reviews) => {
   let ratingsSum = 0;
   reviews.forEach((review) => {
-    ratingsSum += review.accuracy;
+    ratingsSum += review[category];
   });
+  console.log(category, ratingsSum);
   return ratingsSum / reviews.length;
 };
 

@@ -1,9 +1,11 @@
-const webpack = require('webpack');
+const path = require('path');
+
+const distDirectory = path.join(__dirname, '/client/dist');
 
 module.exports = {
   entry: [
     'react-hot-loader/patch',
-    './client/src/index.js',
+    './client/src/index.jsx',
   ],
   module: {
     rules: [
@@ -18,13 +20,10 @@ module.exports = {
     extensions: ['*', '.js', '.jsx'],
   },
   output: {
-    path: __dirname.concat('/client/dist'),
+    path: distDirectory,
     publicPath: '/',
     filename: 'bundle.js',
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
   devServer: {
     contentBase: './client/dist',
     hot: true,

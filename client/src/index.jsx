@@ -34,7 +34,7 @@ class App extends React.Component {
       <div className="reviews">
         Listing id: {this.state.roomId}
         <ReviewsCount roomId={this.state.roomId} count={this.state.reviews.length} />
-        <OverallStars roomId={this.state.roomId} stars={this.state.ratings.overall} />
+        <OverallStars stars={this.state.ratings.overall} />
         <Search roomId={this.state.roomId} />
         <Ratings roomId={this.state.roomId} ratings={this.state.ratings} />
         <ReviewsList roomId={this.state.roomId} />

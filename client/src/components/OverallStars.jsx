@@ -22,7 +22,6 @@ const OverallStars = (props) => {
 };
 
 OverallStars.propTypes = {
-  // roomId: PropTypes.number.isRequired,
   stars: PropTypes.number.isRequired,
 };
 

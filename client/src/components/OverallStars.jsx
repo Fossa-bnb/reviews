@@ -7,7 +7,6 @@ const OverallStars = (props) => {
 
   return (
     <div>
-    Number of stars: {roundedStars}
       <ReactStars
         count={5}
         edit={false}

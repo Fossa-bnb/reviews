@@ -15,13 +15,15 @@ class App extends React.Component {
     this.state = {
       roomId: props.roomId,
       reviews: [],
+      ratings: {},
     };
   }
 
   componentWillMount() {
     axios.get(`/rooms/${this.state.roomId}/reviews`)
       .then((response) => {
-        this.setState({ reviews: response.data });
+        this.setState({ reviews: response.data.reviewsList });
+        this.setState({ ratings: response.data.ratings });
       })
       .catch((error) => {
         console.log(error);
@@ -32,9 +34,9 @@ class App extends React.Component {
       <div className="reviews">
         Listing id: {this.state.roomId}
         <ReviewsCount roomId={this.state.roomId} count={this.state.reviews.length} />
-        <OverallStars roomId={this.state.roomId} />
+        <OverallStars stars={this.state.ratings.overall} />
         <Search roomId={this.state.roomId} />
-        <Ratings roomId={this.state.roomId} />
+        <Ratings roomId={this.state.roomId} ratings={this.state.ratings} />
         <ReviewsList roomId={this.state.roomId} />
       </div>
     );

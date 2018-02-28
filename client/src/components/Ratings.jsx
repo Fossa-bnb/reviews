@@ -7,12 +7,12 @@ const Ratings = ({
 }) => (
   <div>
     Ratings Component
-    <Subrating category="accuracy" rating={accuracy} />
-    <Subrating category="checkIn" rating={checkIn} />
-    <Subrating category="cleanliness" rating={cleanliness} />
-    <Subrating category="communication" rating={communication} />
-    <Subrating category="location" rating={location} />
-    <Subrating category="value" rating={value} />
+    <Subrating category="Accuracy" rating={accuracy} />
+    <Subrating category="Check In" rating={checkIn} />
+    <Subrating category="Cleanliness" rating={cleanliness} />
+    <Subrating category="Communication" rating={communication} />
+    <Subrating category="Location" rating={location} />
+    <Subrating category="Value" rating={value} />
 
   </div>
 );

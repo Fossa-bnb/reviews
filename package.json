@@ -47,6 +47,7 @@
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-stars": "^2.2.5",
     "react-test-renderer": "^16.2.0"
   },
   "devDependencies": {

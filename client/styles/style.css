@@ -1,3 +1,15 @@
+body {
+  color: #484848 !important;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  margin: 0px !important;
+  word-wrap: break-word !important;
+  font-size: 17px !important;
+  line-height: 22px !important;
+  letter-spacing: 0.2px !important;
+  font-weight: 300 !important;
+  display: inline !important;
+}
+
 .ReviewsCount {
   font-weight: 700 !important;
   margin: 0px !important;

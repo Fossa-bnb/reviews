@@ -15,12 +15,14 @@ const Ratings = props => (
 );
 
 Ratings.propTypes = {
-  accuracy: PropTypes.number.isRequired,
-  checkIn: PropTypes.number.isRequired,
-  cleanliness: PropTypes.number.isRequired,
-  communication: PropTypes.number.isRequired,
-  location: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
+  ratings: PropTypes.shape({
+    accuracy: PropTypes.number,
+    checkIn: PropTypes.number,
+    cleanliness: PropTypes.number,
+    communication: PropTypes.number,
+    location: PropTypes.number,
+    value: PropTypes.number,
+  }).isRequired,
 };
 
 

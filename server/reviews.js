@@ -8,7 +8,6 @@ const calculateRatingByCategory = (category, reviews) => {
   reviews.forEach((review) => {
     ratingsSum += review[category];
   });
-  console.log(category, ratingsSum);
   return ratingsSum / reviews.length;
 };
 

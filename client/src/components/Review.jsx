@@ -20,7 +20,9 @@ const Review = (props) => {
           </div>
         </div>
       </div>
-      {props.review.text}
+      <div className="text">
+        {props.review.text}
+      </div>
     </div>
   );
 };

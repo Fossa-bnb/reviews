@@ -22,8 +22,17 @@ router.get('/:roomId/reviews', (req, res) => {
     const valueRating = calculateRatingByCategory('value', reviews);
     const overallRating = ((accuracyRating + communicationRating + cleanlinessRating +
       locationRating + checkInRating + valueRating) / 6);
+    const sanitizedReviews = reviews.map(review => ({
+      reviewId: review.review_id,
+      roomId: review.room_id,
+      userId: review.user_id,
+      userName: review.name,
+      userPhoto: review.photo_url,
+      text: review.text,
+      date: review.date,
+    }));
     const reviewsData = {
-      reviewsList: reviews,
+      reviewsList: sanitizedReviews,
       ratings: {
         accuracy: accuracyRating,
         communication: communicationRating,

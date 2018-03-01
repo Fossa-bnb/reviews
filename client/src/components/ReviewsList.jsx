@@ -6,16 +6,23 @@ import Navigation from './Navigation';
 
 const ReviewsList = props => (
   <div>
-    Reviews List for room {props.roomId}
-    <Review reviewId={1} />
-    <Review reviewId={2} />
-
+    Reviews List
+    <Review review={props.reviews[0]} />
+    <Review review={props.reviews[1]} />
     <Navigation />
   </div>
 );
 
 ReviewsList.propTypes = {
-  roomId: PropTypes.number.isRequired,
+  reviews: PropTypes.arrayOf(PropTypes.shape({
+    reviewId: PropTypes.number,
+    roomId: PropTypes.number,
+    userId: PropTypes.number,
+    userName: PropTypes.string,
+    userPhoto: PropTypes.string,
+    text: PropTypes.string,
+    date: PropTypes.date,
+  })).isRequired,
 };
 
 export default ReviewsList;

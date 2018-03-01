@@ -6,8 +6,11 @@ import Navigation from './Navigation';
 
 const ReviewsList = props => (
   <div>
-    <Review review={props.reviews[0]} />
-    <Review review={props.reviews[1]} />
+    {props.reviews.map((review) => {
+      return (
+        <Review review={review} />
+      );
+    })}
     <Navigation />
   </div>
 );

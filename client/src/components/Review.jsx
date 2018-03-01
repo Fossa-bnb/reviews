@@ -1,31 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Review = (props) => {
-  console.log(props);
-  return (
-    <div className="container review">
-      <div className="container user" >
-        <div className="row">
-          <div className="col-s-2">
-            <img className="profilePhoto" src={props.review.userPhoto} alt="user" />
+const Review = props => (
+  <div className="container review">
+    <div className="container user" >
+      <div className="row">
+        <div className="col-s-2">
+          <img className="profilePhoto" src={props.review.userPhoto} alt="user" />
+        </div>
+        <div className="col">
+          <div className="row">
+            <span className="username" >{props.review.userName}</span>
           </div>
-          <div className="col">
-            <div className="row">
-              <span className="username" >{props.review.userName}</span>
-            </div>
-            <div className="row">
-              <span className="reviewDate" >{props.review.date}</span>
-            </div>
+          <div className="row">
+            <span className="reviewDate" >{props.review.date}</span>
           </div>
         </div>
       </div>
-      <div className="text">
-        {props.review.text}
-      </div>
     </div>
-  );
-};
+    <div className="text">
+      {props.review.text}
+    </div>
+  </div>
+);
 
 Review.propTypes = {
   review: PropTypes.shape({

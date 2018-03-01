@@ -28,17 +28,6 @@ class App extends React.Component {
       });
   }
 
-  componentWillMount() {
-    // axios.get(`/rooms/${this.state.roomId}/reviews`)
-    //   .then((response) => {
-    //     this.setState({ reviews: response.data.reviewsList });
-    //     this.setState({ ratings: response.data.ratings });
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
-  }
-
   render() {
     if (this.state.reviews && this.state.ratings) {
       return (

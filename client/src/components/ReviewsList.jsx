@@ -7,7 +7,7 @@ import Navigation from './Navigation';
 const ReviewsList = props => (
   <div>
     {props.reviews.map(review => (
-      <Review review={review} />
+      <Review review={review} key={review.reviewId} />
       ))}
     <Navigation />
   </div>

@@ -1,5 +1,6 @@
 const express = require('express');
 const db = require('../database/index');
+const moment = require('moment');
 
 const router = express.Router();
 
@@ -29,7 +30,7 @@ router.get('/:roomId/reviews', (req, res) => {
       userName: review.name,
       userPhoto: review.photo_url,
       text: review.text,
-      date: review.date,
+      date: moment(review.date).format('MMMM YYYY'),
     }));
     const reviewsData = {
       reviewsList: sanitizedReviews,

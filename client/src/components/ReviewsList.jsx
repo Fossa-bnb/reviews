@@ -6,7 +6,6 @@ import Navigation from './Navigation';
 
 const ReviewsList = props => (
   <div>
-    Reviews List
     <Review review={props.reviews[0]} />
     <Review review={props.reviews[1]} />
     <Navigation />

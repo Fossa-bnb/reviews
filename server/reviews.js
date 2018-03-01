@@ -12,8 +12,7 @@ const calculateRatingByCategory = (category, reviews) => {
   return ratingsSum / reviews.length;
 };
 
-
-router.get('/:roomId/reviews', (req, res) => {
+router.get('/:roomId/reviews/:page', (req, res) => {
   db.fetchReviews(req.params.roomId, (reviews) => {
     const accuracyRating = calculateRatingByCategory('accuracy', reviews);
     const communicationRating = calculateRatingByCategory('communication', reviews);
@@ -44,7 +43,19 @@ router.get('/:roomId/reviews', (req, res) => {
         overall: overallRating,
       },
     };
-    res.send(reviewsData);
+    if (req.params.page === 'all') {
+      res.send(reviewsData);
+    } else {
+      // page numbering starts at 0
+      const startIndex = req.params.page * 7;
+      const endIndex = startIndex + 7;
+      const paginatedReviews = sanitizedReviews.splice(startIndex, endIndex);
+      const paginatedReviewsData = {
+        reviewsList: paginatedReviews,
+        ratings: reviewsData.ratings,
+      };
+      res.send(paginatedReviewsData);
+    }
   });
 });
 

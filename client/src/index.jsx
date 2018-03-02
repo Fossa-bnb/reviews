@@ -18,7 +18,7 @@ class App extends React.Component {
       reviews: null,
       ratings: null,
     };
-    axios.get(`/rooms/${this.state.roomId}/reviews/0`)
+    axios.get(`/rooms/${this.state.roomId}/reviews`)
       .then((response) => {
         this.setState({ reviews: response.data.reviewsList });
         this.setState({ ratings: response.data.ratings });

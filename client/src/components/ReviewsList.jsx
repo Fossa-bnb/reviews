@@ -8,7 +8,7 @@ class ReviewsList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      page: 0,
+      page: 1,
       reviews: this.props.reviews,
       displayedReviews: this.props.reviews.slice(0, 7),
     };

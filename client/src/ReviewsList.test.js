@@ -31,13 +31,71 @@ describe('<Subrating /> Component', () => {
     text: 'Sint doloremque culpa accusamus sit. Dignissimos aut harum ut nobis repellat repudiandae. Expedita culpa iure commodi laboriosam nihil hic vel dolores.',
     date: 'January 2018',
   };
-  const reviewsList = [review1, review2, review3];
+  const review4 = {
+    reviewId: 4,
+    roomId: 24,
+    userId: 66,
+    userName: 'Gob',
+    userPhoto: 'https://s3.amazonaws.com/uifaces/faces/twitter/sergeyalmone/128.jpg',
+    text: 'Sint doloremque culpa accusamus sit. Dignissimos aut harum ut nobis repellat repudiandae. Expedita culpa iure commodi laboriosam nihil hic vel dolores.',
+    date: 'January 2018',
+  };
+  const review5 = {
+    reviewId: 5,
+    roomId: 24,
+    userId: 66,
+    userName: 'Michael',
+    userPhoto: 'https://s3.amazonaws.com/uifaces/faces/twitter/sergeyalmone/128.jpg',
+    text: 'Sint doloremque culpa accusamus sit. Dignissimos aut harum ut nobis repellat repudiandae. Expedita culpa iure commodi laboriosam nihil hic vel dolores.',
+    date: 'January 2018',
+  };
+  const review6 = {
+    reviewId: 6,
+    roomId: 24,
+    userId: 66,
+    userName: 'Lindsay',
+    userPhoto: 'https://s3.amazonaws.com/uifaces/faces/twitter/sergeyalmone/128.jpg',
+    text: 'Sint doloremque culpa accusamus sit. Dignissimos aut harum ut nobis repellat repudiandae. Expedita culpa iure commodi laboriosam nihil hic vel dolores.',
+    date: 'January 2018',
+  };
+  const review7 = {
+    reviewId: 7,
+    roomId: 24,
+    userId: 66,
+    userName: 'George-Michael',
+    userPhoto: 'https://s3.amazonaws.com/uifaces/faces/twitter/sergeyalmone/128.jpg',
+    text: 'Sint doloremque culpa accusamus sit. Dignissimos aut harum ut nobis repellat repudiandae. Expedita culpa iure commodi laboriosam nihil hic vel dolores.',
+    date: 'January 2018',
+  };
+  const review8 = {
+    reviewId: 8,
+    roomId: 24,
+    userId: 66,
+    userName: 'Tobias',
+    userPhoto: 'https://s3.amazonaws.com/uifaces/faces/twitter/sergeyalmone/128.jpg',
+    text: 'Sint doloremque culpa accusamus sit. Dignissimos aut harum ut nobis repellat repudiandae. Expedita culpa iure commodi laboriosam nihil hic vel dolores.',
+    date: 'January 2018',
+  };
+  const reviewsList = [review1, review2, review3, review4, review5, review6, review7, review8];
   const wrapper = mount(<ReviewsList reviews={reviewsList} />);
 
   it('should receive the reviews as a prop', () => {
     expect(wrapper.prop('reviews')).toEqual(reviewsList);
   });
   it('should render the correct number of review components', () => {
-    expect(wrapper.find('Review')).toHaveLength(3);
+    expect(wrapper.find('Review')).toHaveLength(7);
+  });
+  it('should by default start at page 1 of the reviews', () => {
+    expect(wrapper.state('page')).toEqual(1);
+  });
+  it('should change page state when updateCurrentPage is called', () => {
+    wrapper.instance().updateCurrentPage(2);
+    expect(wrapper.state('page')).toEqual(2);
+  });
+  it('should render the appropriate reviews based on the current page', () => {
+    expect(wrapper.state('displayedReviews')).toEqual([reviewsList[7]]);
+  });
+  it('should render a Navigation component', () => {
+    expect(wrapper.find('Navigation')).toHaveLength(1);
   });
 });

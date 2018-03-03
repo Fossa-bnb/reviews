@@ -29,7 +29,8 @@
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
-    ]
+    ],
+    "collectCoverage": true
   },
   "dependencies": {
     "axios": "^0.18.0",

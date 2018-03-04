@@ -17,7 +17,10 @@ class App extends React.Component {
       roomId: props.roomId,
       reviews: null,
       ratings: null,
+      searchParams: null,
+      searchResults: null,
     };
+    this.updateSearchParams = this.updateSearchParams.bind(this);
   }
 
   componentDidMount() {
@@ -31,14 +34,35 @@ class App extends React.Component {
       });
   }
 
+  updateSearchParams(text) {
+    console.log(text);
+    console.log(this);
+  }
+
+  searchReviews() {
+    const results = [];
+    this.setState({ searchResults: results });
+  }
+
   render() {
-    if (this.state.reviews && this.state.ratings) {
+    if (this.state.searchResults && this.state.ratings) {
       return (
         <div className="reviews">
           Listing id: {this.state.roomId}
           <ReviewsCount roomId={this.state.roomId} count={this.state.reviews.length} />
           <OverallStars stars={this.state.ratings.overall} />
-          <Search roomId={this.state.roomId} />
+          <Search roomId={this.state.roomId} updateSearchParams={this.updateSearchParams} />
+          <Ratings roomId={this.state.roomId} ratings={this.state.ratings} />
+          <ReviewsList reviews={this.state.searchResults} />
+        </div>
+      );
+    } else if (this.state.reviews && this.state.ratings) {
+      return (
+        <div className="reviews">
+          Listing id: {this.state.roomId}
+          <ReviewsCount roomId={this.state.roomId} count={this.state.reviews.length} />
+          <OverallStars stars={this.state.ratings.overall} />
+          <Search roomId={this.state.roomId} updateSearchParams={this.updateSearchParams} />
           <Ratings roomId={this.state.roomId} ratings={this.state.ratings} />
           <ReviewsList reviews={this.state.reviews} />
         </div>

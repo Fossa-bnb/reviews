@@ -1,8 +1,13 @@
 import React from 'react';
+import $ from 'jquery';
 
-const Search = () => (
+const Search = ({ updateSearchParams }) => (
   <div>
-    Search Component
+    <input
+      type="text"
+      placeholder="Search reviews"
+      onKeyUp={(event) => { if (event.keyCode === 13) { updateSearchParams($(event.target).val()); } }}
+    />
   </div>
 );
 

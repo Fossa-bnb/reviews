@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 
-import Ratings from './components/Ratings';
+import Ratings from '../src/components/Ratings';
 
 describe('<Ratings /> Component', () => {
   const ratingsObj = {

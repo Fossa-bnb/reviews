@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import Subrating from './components/Subrating';
+import Subrating from '../src/components/Subrating';
 
 describe('<Subrating /> Component', () => {
   const wrapper = mount(<Subrating category="Accuracy" rating={3.74} />);

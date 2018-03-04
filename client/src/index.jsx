@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import 'bootstrap';
 
 import Ratings from './components/Ratings';
 import ReviewsList from './components/ReviewsList';
@@ -14,12 +15,12 @@ class App extends React.Component {
     super(props);
     this.state = {
       roomId: props.roomId,
-      reviews: [],
-      ratings: {},
+      reviews: null,
+      ratings: null,
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     axios.get(`/rooms/${this.state.roomId}/reviews`)
       .then((response) => {
         this.setState({ reviews: response.data.reviewsList });
@@ -29,17 +30,21 @@ class App extends React.Component {
         console.log(error);
       });
   }
+
   render() {
-    return (
-      <div className="reviews">
-        Listing id: {this.state.roomId}
-        <ReviewsCount roomId={this.state.roomId} count={this.state.reviews.length} />
-        <OverallStars stars={this.state.ratings.overall} />
-        <Search roomId={this.state.roomId} />
-        <Ratings roomId={this.state.roomId} ratings={this.state.ratings} />
-        <ReviewsList roomId={this.state.roomId} />
-      </div>
-    );
+    if (this.state.reviews && this.state.ratings) {
+      return (
+        <div className="reviews">
+          Listing id: {this.state.roomId}
+          <ReviewsCount roomId={this.state.roomId} count={this.state.reviews.length} />
+          <OverallStars stars={this.state.ratings.overall} />
+          <Search roomId={this.state.roomId} />
+          <Ratings roomId={this.state.roomId} ratings={this.state.ratings} />
+          <ReviewsList reviews={this.state.reviews} />
+        </div>
+      );
+    }
+    return <div>Loading..</div>;
   }
 }
 

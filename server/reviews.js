@@ -1,5 +1,6 @@
 const express = require('express');
 const db = require('../database/index');
+const moment = require('moment');
 
 const router = express.Router();
 
@@ -8,10 +9,8 @@ const calculateRatingByCategory = (category, reviews) => {
   reviews.forEach((review) => {
     ratingsSum += review[category];
   });
-  console.log(category, ratingsSum);
   return ratingsSum / reviews.length;
 };
-
 
 router.get('/:roomId/reviews', (req, res) => {
   db.fetchReviews(req.params.roomId, (reviews) => {
@@ -23,8 +22,17 @@ router.get('/:roomId/reviews', (req, res) => {
     const valueRating = calculateRatingByCategory('value', reviews);
     const overallRating = ((accuracyRating + communicationRating + cleanlinessRating +
       locationRating + checkInRating + valueRating) / 6);
+    const sanitizedReviews = reviews.map(review => ({
+      reviewId: review.review_id,
+      roomId: review.room_id,
+      userId: review.user_id,
+      userName: review.name,
+      userPhoto: review.photo_url,
+      text: review.text,
+      date: moment(review.date).format('MMMM YYYY'),
+    }));
     const reviewsData = {
-      reviewsList: reviews,
+      reviewsList: sanitizedReviews,
       ratings: {
         accuracy: accuracyRating,
         communication: communicationRating,

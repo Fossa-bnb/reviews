@@ -28,7 +28,7 @@ class ReviewsList extends React.Component {
   // }
 
   render() {
-    return (
+    return // (
       // <div id="review">
       //   {this.state.displayedReviews.map(review => (
       //     <Review review={review} key={review.reviewId} />
@@ -38,7 +38,7 @@ class ReviewsList extends React.Component {
       //     clickHandler={this.updateCurrentPage}
       //   />
       // </div>
-    );
+    // );
   }
 }
 

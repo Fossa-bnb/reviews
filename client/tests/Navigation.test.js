@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import Navigation from './components/Navigation';
+import Navigation from '../src/components/Navigation';
 
 describe('<Navigation /> Component', () => {
   let clickCounter = 0;

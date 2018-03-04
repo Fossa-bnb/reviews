@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import ReviewsCount from './components/ReviewsCount';
+import ReviewsCount from '../src/components/ReviewsCount';
 
 describe('<ReviewsCount /> Component', () => {
   it('should render a reviewsCount component', () => {

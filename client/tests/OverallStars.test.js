@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import OverallStars from './components/OverallStars';
+import OverallStars from '../src/components/OverallStars';
 
 describe('<OverallStars /> Component', () => {
   const wrapper = mount(<OverallStars stars={3.74} />);

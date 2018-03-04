@@ -1,9 +1,9 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import Review from './components/Review';
+import Review from '../src/components/Review';
 
-describe('<Subrating /> Component', () => {
+describe('<Review /> Component', () => {
   const reviewObj = {
     reviewId: 1,
     roomId: 24,

@@ -27,8 +27,8 @@ class ReviewsList extends React.Component {
   //   this.setState({ displayedReviews: this.state.reviews.slice(startIndex, endIndex) });
   // }
 
-  render() {
-    return // (
+  // render() {
+  //   return (
       // <div id="review">
       //   {this.state.displayedReviews.map(review => (
       //     <Review review={review} key={review.reviewId} />
@@ -39,7 +39,7 @@ class ReviewsList extends React.Component {
       //   />
       // </div>
     // );
-  }
+//   }
 }
 
 // ReviewsList.propTypes = {

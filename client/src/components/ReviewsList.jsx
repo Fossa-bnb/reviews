@@ -1,19 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 // import Review from './Review';
 // import Navigation from './Navigation';
 
 class ReviewsList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      // page: 1,
-      // reviews: this.props.reviews,
-      // displayedReviews: this.props.reviews.slice(0, 7),
-    };
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     // page: 1,
+  //     // reviews: this.props.reviews,
+  //     // displayedReviews: this.props.reviews.slice(0, 7),
+  //   };
     // this.updateCurrentPage = this.updateCurrentPage.bind(this);
-  }
+  // }
 
   // updateCurrentPage(newPage) {
   //   this.setState({ page: newPage }, () => {

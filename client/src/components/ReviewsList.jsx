@@ -8,9 +8,9 @@ class ReviewsList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      page: 1,
-      reviews: this.props.reviews,
-      displayedReviews: this.props.reviews.slice(0, 7),
+      // page: 1,
+      // reviews: this.props.reviews,
+      // displayedReviews: this.props.reviews.slice(0, 7),
     };
     // this.updateCurrentPage = this.updateCurrentPage.bind(this);
   }
@@ -29,15 +29,15 @@ class ReviewsList extends React.Component {
 
   render() {
     return (
-      <div id="review">
-        {this.state.displayedReviews.map(review => (
-          <Review review={review} key={review.reviewId} />
-      ))}
-        <Navigation
-          pages={Math.ceil(this.state.reviews.length / 7)}
-          clickHandler={this.updateCurrentPage}
-        />
-      </div>
+      // <div id="review">
+      //   {this.state.displayedReviews.map(review => (
+      //     <Review review={review} key={review.reviewId} />
+      // ))}
+      //   <Navigation
+      //     pages={Math.ceil(this.state.reviews.length / 7)}
+      //     clickHandler={this.updateCurrentPage}
+      //   />
+      // </div>
     );
   }
 }

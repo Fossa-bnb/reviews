@@ -12,20 +12,20 @@ class ReviewsList extends React.Component {
       reviews: this.props.reviews,
       displayedReviews: this.props.reviews.slice(0, 7),
     };
-    this.updateCurrentPage = this.updateCurrentPage.bind(this);
+    // this.updateCurrentPage = this.updateCurrentPage.bind(this);
   }
 
-  updateCurrentPage(newPage) {
-    this.setState({ page: newPage }, () => {
-      this.updateDisplayedReviews();
-    });
-  }
+  // updateCurrentPage(newPage) {
+  //   this.setState({ page: newPage }, () => {
+  //     this.updateDisplayedReviews();
+  //   });
+  // }
 
-  updateDisplayedReviews() {
-    const startIndex = (this.state.page - 1) * 7;
-    const endIndex = startIndex + 7;
-    this.setState({ displayedReviews: this.state.reviews.slice(startIndex, endIndex) });
-  }
+  // updateDisplayedReviews() {
+  //   const startIndex = (this.state.page - 1) * 7;
+  //   const endIndex = startIndex + 7;
+  //   this.setState({ displayedReviews: this.state.reviews.slice(startIndex, endIndex) });
+  // }
 
   render() {
     return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import ReviewsList from '../src/components/ReviewsCount';
+import ReviewsList from '../src/components/ReviewsList';
 
 describe('<ReviewsList /> Component', () => {
   const review1 = {

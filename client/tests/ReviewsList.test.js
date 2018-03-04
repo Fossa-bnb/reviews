@@ -77,7 +77,7 @@ describe('<ReviewsList /> Component', () => {
     date: 'January 2018',
   };
   const reviewsList = [review1, review2, review3, review4, review5, review6, review7, review8];
-  // const wrapper = mount(<ReviewsList reviews={reviewsList} />);
+  const wrapper = mount(<ReviewsList reviews={reviewsList} />);
 
   it('should pass this test', () => {
     expect(2+ 2).toEqual(4);

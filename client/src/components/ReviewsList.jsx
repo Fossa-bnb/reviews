@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Review from './Review';
-import Navigation from './Navigation';
+// import Review from './Review';
+// import Navigation from './Navigation';
 
 class ReviewsList extends React.Component {
   constructor(props) {
@@ -42,16 +42,16 @@ class ReviewsList extends React.Component {
   }
 }
 
-ReviewsList.propTypes = {
-  reviews: PropTypes.arrayOf(PropTypes.shape({
-    reviewId: PropTypes.number,
-    roomId: PropTypes.number,
-    userId: PropTypes.number,
-    userName: PropTypes.string,
-    userPhoto: PropTypes.string,
-    text: PropTypes.string,
-    date: PropTypes.date,
-  })).isRequired,
-};
+// ReviewsList.propTypes = {
+//   reviews: PropTypes.arrayOf(PropTypes.shape({
+//     reviewId: PropTypes.number,
+//     roomId: PropTypes.number,
+//     userId: PropTypes.number,
+//     userName: PropTypes.string,
+//     userPhoto: PropTypes.string,
+//     text: PropTypes.string,
+//     date: PropTypes.date,
+//   })).isRequired,
+// };
 
 export default ReviewsList;

@@ -128,3 +128,9 @@ body {
 .rating {
   padding-top: 20px;
 }
+
+.header {
+  border-bottom: 1px solid rgb(220, 224, 224);
+  padding-bottom: 20px;
+  padding-top: 20px;
+}

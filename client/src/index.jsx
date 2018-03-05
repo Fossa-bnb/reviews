@@ -81,7 +81,7 @@ class App extends React.Component {
     } else if (this.state.reviews && this.state.ratings) {
       return (
         <div className="container reviews">
-          <div className="row">
+          <div className="row header">
             <div className="col-2">
               <ReviewsCount roomId={this.state.roomId} count={this.state.reviews.length} />
             </div>

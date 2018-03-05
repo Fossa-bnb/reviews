@@ -55,11 +55,18 @@ class App extends React.Component {
   render() {
     if (this.state.searchResults) {
       return (
-        <div className="reviews">
-          Listing id: {this.state.roomId}
-          <ReviewsCount roomId={this.state.roomId} count={this.state.reviews.length} />
-          <OverallStars stars={this.state.ratings.overall} />
-          <Search roomId={this.state.roomId} searchReviews={this.searchReviews} />
+        <div className="container reviews">
+          <div className="row">
+            <div className="col-2">
+              <ReviewsCount roomId={this.state.roomId} count={this.state.reviews.length} />
+            </div>
+            <div className="col">
+              <OverallStars stars={this.state.ratings.overall} />
+            </div>
+            <div className="col-2">
+              <Search roomId={this.state.roomId} searchReviews={this.searchReviews} />
+            </div>
+          </div>
           <SearchSummary
             numberOfResults={this.state.searchResults.length}
             params={this.state.searchParams}
@@ -70,11 +77,18 @@ class App extends React.Component {
       );
     } else if (this.state.reviews && this.state.ratings) {
       return (
-        <div className="reviews">
-          Listing id: {this.state.roomId}
-          <ReviewsCount roomId={this.state.roomId} count={this.state.reviews.length} />
-          <OverallStars stars={this.state.ratings.overall} />
-          <Search roomId={this.state.roomId} searchReviews={this.searchReviews} />
+        <div className="container reviews">
+          <div className="row">
+            <div className="col-2">
+              <ReviewsCount roomId={this.state.roomId} count={this.state.reviews.length} />
+            </div>
+            <div className="col">
+              <OverallStars stars={this.state.ratings.overall} />
+            </div>
+            <div className="col-2">
+              <Search roomId={this.state.roomId} searchReviews={this.searchReviews} />
+            </div>
+          </div>
           <Ratings roomId={this.state.roomId} ratings={this.state.ratings} />
           <ReviewsList reviews={this.state.reviews} />
         </div>

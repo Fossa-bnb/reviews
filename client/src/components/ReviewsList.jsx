@@ -14,6 +14,14 @@ class ReviewsList extends React.Component {
     this.updateCurrentPage = this.updateCurrentPage.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.reviews.length === 0) {
+      this.setState({ displayedReviews: [] });
+    } else {
+      this.setState({ displayedReviews: nextProps.reviews.slice(0, 7) });
+    }
+  }
+
   updateCurrentPage(newPage) {
     this.setState({ page: newPage }, () => {
       this.updateDisplayedReviews();

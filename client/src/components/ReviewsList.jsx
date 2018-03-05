@@ -9,7 +9,6 @@ class ReviewsList extends React.Component {
     super(props);
     this.state = {
       page: 1,
-      reviews: this.props.reviews,
       displayedReviews: this.props.reviews.slice(0, 7),
     };
     this.updateCurrentPage = this.updateCurrentPage.bind(this);
@@ -24,7 +23,7 @@ class ReviewsList extends React.Component {
   updateDisplayedReviews() {
     const startIndex = (this.state.page - 1) * 7;
     const endIndex = startIndex + 7;
-    this.setState({ displayedReviews: this.state.reviews.slice(startIndex, endIndex) });
+    this.setState({ displayedReviews: this.props.reviews.slice(startIndex, endIndex) });
   }
 
   render() {
@@ -34,7 +33,7 @@ class ReviewsList extends React.Component {
           <Review review={review} key={review.reviewId} />
       ))}
         <Navigation
-          pages={Math.ceil(this.state.reviews.length / 7)}
+          pages={Math.ceil(this.props.reviews.length / 7)}
           clickHandler={this.updateCurrentPage}
         />
       </div>

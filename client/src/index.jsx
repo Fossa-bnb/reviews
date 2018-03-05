@@ -17,15 +17,16 @@ class App extends React.Component {
       roomId: props.roomId,
       reviews: null,
       ratings: null,
-      searchParams: null,
       searchResults: null,
+      // allReviews: null
     };
-    this.updateSearchParams = this.updateSearchParams.bind(this);
+    this.searchReviews = this.searchReviews.bind(this);
   }
 
   componentDidMount() {
     axios.get(`/rooms/${this.state.roomId}/reviews`)
       .then((response) => {
+        // this.setState({ allReviews: response.data.reviewsList });
         this.setState({ reviews: response.data.reviewsList });
         this.setState({ ratings: response.data.ratings });
       })
@@ -34,37 +35,29 @@ class App extends React.Component {
       });
   }
 
-  updateSearchParams(text) {
-    console.log(text);
-    console.log(this);
-  }
-
-  searchReviews() {
+  searchReviews(searchParams) {
+    console.log(searchParams);
     const results = [];
-    this.setState({ searchResults: results });
+    this.state.reviews.forEach((review) => {
+      if (review.text.includes(searchParams)) {
+        results.push(review);
+      }
+    });
+    this.setState({ reviews: results });
   }
 
   render() {
-    if (this.state.searchResults && this.state.ratings) {
+    const reviews = this.state.reviews;
+    console.log(reviews);
+    if (this.state.reviews && this.state.ratings) {
       return (
         <div className="reviews">
           Listing id: {this.state.roomId}
           <ReviewsCount roomId={this.state.roomId} count={this.state.reviews.length} />
           <OverallStars stars={this.state.ratings.overall} />
-          <Search roomId={this.state.roomId} updateSearchParams={this.updateSearchParams} />
+          <Search roomId={this.state.roomId} searchReviews={this.searchReviews} />
           <Ratings roomId={this.state.roomId} ratings={this.state.ratings} />
-          <ReviewsList reviews={this.state.searchResults} />
-        </div>
-      );
-    } else if (this.state.reviews && this.state.ratings) {
-      return (
-        <div className="reviews">
-          Listing id: {this.state.roomId}
-          <ReviewsCount roomId={this.state.roomId} count={this.state.reviews.length} />
-          <OverallStars stars={this.state.ratings.overall} />
-          <Search roomId={this.state.roomId} updateSearchParams={this.updateSearchParams} />
-          <Ratings roomId={this.state.roomId} ratings={this.state.ratings} />
-          <ReviewsList reviews={this.state.reviews} />
+          <ReviewsList reviews={this.state.reviews} searchResults={this.state.searchResults} />
         </div>
       );
     }

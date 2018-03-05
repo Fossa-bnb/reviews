@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 const Search = ({ searchReviews }) => (
   <div>
     <input
+      className="searchInput"
       type="text"
       placeholder="Search reviews"
       onKeyUp={(event) => { if (event.keyCode === 13) { searchReviews($(event.target).val()); } }}

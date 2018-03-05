@@ -71,6 +71,18 @@ body {
   border-bottom: 1px solid rgb(220, 224, 224);
 }
 
+.searchInput:focus {
+  border-color: #008489;
+  border-width: 1px;
+  outline: none;
+}
+
+.activeSearchInput {
+  border-color: #008489;
+  border-width: 1px;
+  outline: none;
+}
+
 .searchSummary {
   box-sizing: border-box;
   color:rgb(72, 72, 72);

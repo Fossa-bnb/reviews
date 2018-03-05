@@ -39,6 +39,7 @@ class App extends React.Component {
 
   searchReviews(filter) {
     this.setState({ searchParams: filter });
+    $('input').addClass('activeSearchInput');
     const results = [];
     this.state.reviews.forEach((review) => {
       if (review.text.toLowerCase().includes(filter.toLowerCase())) {

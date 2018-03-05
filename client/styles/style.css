@@ -70,3 +70,33 @@ body {
   padding-bottom: 25px;
   border-bottom: 1px solid rgb(220, 224, 224);
 }
+
+.searchSummary {
+  box-sizing: border-box;
+  color:rgb(72, 72, 72);
+  display:inline;
+  font-family:Circular, -apple-system, system-ui, Roboto, "Helvetica Neue", sans-serif;
+  font-size:15px;
+  font-weight:300;
+  height:auto;
+  letter-spacing:0.2px;
+  line-height:18px;
+  text-align:left;
+  text-size-adjust:100%;
+  width:auto;
+  word-wrap:break-word;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+}
+
+.backToReviews {
+  color: rgb(0, 132, 137);
+  cursor: pointer;
+  letter-spacing: normal;
+  user-select: auto;
+  word-spacing: 0px;
+}
+
+.backToReviews:hover {
+  text-decoration: underline;
+}

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import 'bootstrap';
+import $ from 'jquery';
 
 import Ratings from './components/Ratings';
 import ReviewsList from './components/ReviewsList';
@@ -41,7 +42,6 @@ class App extends React.Component {
     const results = [];
     this.state.reviews.forEach((review) => {
       if (review.text.toLowerCase().includes(filter.toLowerCase())) {
-        console.log(review.text, filter);
         results.push(review);
       }
     });
@@ -51,6 +51,7 @@ class App extends React.Component {
   resetSearch() {
     this.setState({ searchParams: null });
     this.setState({ searchResults: null });
+    $('input').val('');
   }
 
   render() {

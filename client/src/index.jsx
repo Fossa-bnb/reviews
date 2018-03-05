@@ -9,6 +9,7 @@ import ReviewsList from './components/ReviewsList';
 import ReviewsCount from './components/ReviewsCount';
 import OverallStars from './components/OverallStars';
 import Search from './components/Search';
+import SearchSummary from './components/SearchSummary';
 
 class App extends React.Component {
   constructor(props) {
@@ -19,15 +20,14 @@ class App extends React.Component {
       ratings: null,
       searchResults: null,
       searchParams: null,
-      allReviews: null
     };
     this.searchReviews = this.searchReviews.bind(this);
+    this.resetSearch = this.resetSearch.bind(this);
   }
 
   componentDidMount() {
     axios.get(`/rooms/${this.state.roomId}/reviews`)
       .then((response) => {
-        this.setState({ allReviews: response.data.reviewsList });
         this.setState({ reviews: response.data.reviewsList });
         this.setState({ ratings: response.data.ratings });
       })
@@ -44,20 +44,39 @@ class App extends React.Component {
         results.push(review);
       }
     });
-    this.setState({ reviews: results });
-    this.setState({ searchResults: true });
+    this.setState({ searchResults: results });
+  }
+
+  resetSearch() {
+    this.setState({ searchParams: null });
+    this.setState({ searchResults: null });
   }
 
   render() {
-    if (this.state.reviews && this.state.ratings) {
+    if (this.state.searchResults) {
       return (
         <div className="reviews">
           Listing id: {this.state.roomId}
-          <ReviewsCount roomId={this.state.roomId} count={this.state.allReviews.length} />
+          <ReviewsCount roomId={this.state.roomId} count={this.state.reviews.length} />
+          <OverallStars stars={this.state.ratings.overall} />
+          <Search roomId={this.state.roomId} searchReviews={this.searchReviews} />
+          <SearchSummary
+            numberOfResults={this.state.searchResults.length}
+            params={this.state.searchParams}
+            resetSearch={this.resetSearch}
+          />
+          <ReviewsList reviews={this.state.searchResults} />
+        </div>
+      );
+    } else if (this.state.reviews && this.state.ratings) {
+      return (
+        <div className="reviews">
+          Listing id: {this.state.roomId}
+          <ReviewsCount roomId={this.state.roomId} count={this.state.reviews.length} />
           <OverallStars stars={this.state.ratings.overall} />
           <Search roomId={this.state.roomId} searchReviews={this.searchReviews} />
           <Ratings roomId={this.state.roomId} ratings={this.state.ratings} />
-          <ReviewsList reviews={this.state.reviews} searchResults={this.state.searchResults} searchParams={this.state.searchParams} />
+          <ReviewsList reviews={this.state.reviews} />
         </div>
       );
     }

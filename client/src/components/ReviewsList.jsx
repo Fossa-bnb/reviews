@@ -27,32 +27,17 @@ class ReviewsList extends React.Component {
   }
 
   render() {
-    if (this.props.searchResults) {
-      return (
-        <div id="review">
-          <div id="results">{this.props.reviews.length} guests have mentioned {this.props.searchParams}</div>
-          {this.state.displayedReviews.map(review => (
-            <Review review={review} key={review.reviewId} />
-        ))}
-          <Navigation
-            pages={Math.ceil(this.props.reviews.length / 7)}
-            clickHandler={this.updateCurrentPage}
-          />
-        </div>
-      ); 
-    } else {
-      return (
-        <div id="review">
-          {this.state.displayedReviews.map(review => (
-            <Review review={review} key={review.reviewId} />
-        ))}
-          <Navigation
-            pages={Math.ceil(this.props.reviews.length / 7)}
-            clickHandler={this.updateCurrentPage}
-          />
-        </div>
-      );
-    }
+    return (
+      <div id="review">
+        {this.state.displayedReviews.map(review => (
+          <Review review={review} key={review.reviewId} />
+      ))}
+        <Navigation
+          pages={Math.ceil(this.props.reviews.length / 7)}
+          clickHandler={this.updateCurrentPage}
+        />
+      </div>
+    );
   }
 }
 

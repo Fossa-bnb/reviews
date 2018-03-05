@@ -18,7 +18,8 @@ class App extends React.Component {
       reviews: null,
       ratings: null,
       searchResults: null,
-      // allReviews: null
+      searchParams: null,
+      allReviews: null
     };
     this.searchReviews = this.searchReviews.bind(this);
   }
@@ -26,7 +27,7 @@ class App extends React.Component {
   componentDidMount() {
     axios.get(`/rooms/${this.state.roomId}/reviews`)
       .then((response) => {
-        // this.setState({ allReviews: response.data.reviewsList });
+        this.setState({ allReviews: response.data.reviewsList });
         this.setState({ reviews: response.data.reviewsList });
         this.setState({ ratings: response.data.ratings });
       })
@@ -35,15 +36,16 @@ class App extends React.Component {
       });
   }
 
-  searchReviews(searchParams) {
-    console.log(searchParams);
+  searchReviews(filter) {
+    this.setState({ searchParams: filter });
     const results = [];
     this.state.reviews.forEach((review) => {
-      if (review.text.includes(searchParams)) {
+      if (review.text.includes(filter)) {
         results.push(review);
       }
     });
     this.setState({ reviews: results });
+    this.setState({ searchResults: true });
   }
 
   render() {
@@ -51,11 +53,11 @@ class App extends React.Component {
       return (
         <div className="reviews">
           Listing id: {this.state.roomId}
-          <ReviewsCount roomId={this.state.roomId} count={this.state.reviews.length} />
+          <ReviewsCount roomId={this.state.roomId} count={this.state.allReviews.length} />
           <OverallStars stars={this.state.ratings.overall} />
           <Search roomId={this.state.roomId} searchReviews={this.searchReviews} />
           <Ratings roomId={this.state.roomId} ratings={this.state.ratings} />
-          <ReviewsList reviews={this.state.reviews} searchResults={this.state.searchResults} />
+          <ReviewsList reviews={this.state.reviews} searchResults={this.state.searchResults} searchParams={this.state.searchParams} />
         </div>
       );
     }

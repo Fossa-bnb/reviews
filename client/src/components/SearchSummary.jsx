@@ -6,7 +6,7 @@ const SearchSummary = ({ numberOfResults, params, resetSearch }) => {
     return (
       <div className="container searchSummary">
         <div className="row justify-content-between summaryText">
-          <div className="col-s-2">
+          <div className="col-s-2 searchResultsSummary">
             None of our guests have mentioned <span className="params">&quot;{params}&quot;</span>
           </div>
           <div className="col-s-2">
@@ -26,7 +26,7 @@ const SearchSummary = ({ numberOfResults, params, resetSearch }) => {
     return (
       <div className="container searchSummary">
         <div className="row justify-content-between summaryText">
-          <div className="col-s-2">
+          <div className="col-s-2 searchResultsSummary">
             {numberOfResults} guest has mentioned <span className="params">&quot;{params}&quot;</span>
           </div>
           <div className="col-s-2">
@@ -46,8 +46,9 @@ const SearchSummary = ({ numberOfResults, params, resetSearch }) => {
   return (
     <div className="container searchSummary">
       <div className="row justify-content-between summaryText">
-        <div className="col-s-2">
-          {numberOfResults} guests have mentioned <span className="params">&quot;{params}&quot;</span>
+        <div className="col-s-2 searchResultsSummary">
+          {numberOfResults} guests have mentioned
+          <span className="params"> &quot;{params}&quot;</span>
         </div>
         <div className="col-s-2">
           <span

@@ -98,4 +98,11 @@ describe('<ReviewsList /> Component', () => {
   it('should render a Navigation component', () => {
     expect(wrapper.find('Navigation')).toHaveLength(1);
   });
+  it('should rerender with new values when passed new props', () => {
+    wrapper.setProps({ reviews: [] });
+    expect(wrapper.prop('reviews')).toEqual([]);
+    const subsetOfReviews = [review1, review3, review5];
+    wrapper.setProps({ reviews: subsetOfReviews });
+    expect(wrapper.prop('reviews')).toHaveLength(3);
+  });
 });

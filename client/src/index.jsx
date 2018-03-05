@@ -40,7 +40,8 @@ class App extends React.Component {
     this.setState({ searchParams: filter });
     const results = [];
     this.state.reviews.forEach((review) => {
-      if (review.text.includes(filter)) {
+      if (review.text.toLowerCase().includes(filter.toLowerCase())) {
+        console.log(review.text, filter);
         results.push(review);
       }
     });

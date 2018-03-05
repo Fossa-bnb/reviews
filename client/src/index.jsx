@@ -47,8 +47,6 @@ class App extends React.Component {
   }
 
   render() {
-    const reviews = this.state.reviews;
-    console.log(reviews);
     if (this.state.reviews && this.state.ratings) {
       return (
         <div className="reviews">

@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
+import PropTypes from 'prop-types';
 
 const Search = ({ searchReviews }) => (
   <div>
@@ -10,5 +11,9 @@ const Search = ({ searchReviews }) => (
     />
   </div>
 );
+
+Search.propTypes = {
+  searchReviews: PropTypes.func.isRequired,
+};
 
 export default Search;

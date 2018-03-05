@@ -89,6 +89,17 @@ body {
   -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
 }
 
+.summaryText {
+  border-bottom: 1px solid rgb(220, 224, 224);
+  border-top: 1px solid rgb(220, 224, 224);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.params {
+  font-weight: bold;
+}
+
 .backToReviews {
   color: rgb(0, 132, 137);
   cursor: pointer;
@@ -96,6 +107,7 @@ body {
   user-select: auto;
   word-spacing: 0px;
 }
+
 
 .backToReviews:hover {
   text-decoration: underline;

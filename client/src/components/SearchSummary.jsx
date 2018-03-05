@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 const SearchSummary = ({ numberOfResults, params, resetSearch }) => (
   <div className="container searchSummary">
-    <div className="row justify-content-between">
+    <div className="row justify-content-between summaryText">
       <div className="col-s-2">
-        {numberOfResults} guests have mentioned <span className="params">{params}</span>
+        {numberOfResults} guests have mentioned <span className="params">&quot;{params}&quot;</span>
       </div>
       <div className="col-s-2">
         <span

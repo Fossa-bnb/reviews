@@ -1,9 +1,20 @@
 import React from 'react';
+import $ from 'jquery';
+import PropTypes from 'prop-types';
 
-const Search = () => (
+const Search = ({ searchReviews }) => (
   <div>
-    Search Component
+    <input
+      className="searchInput"
+      type="text"
+      placeholder="Search reviews"
+      onKeyUp={(event) => { if (event.keyCode === 13) { searchReviews($(event.target).val()); } }}
+    />
   </div>
 );
+
+Search.propTypes = {
+  searchReviews: PropTypes.func.isRequired,
+};
 
 export default Search;

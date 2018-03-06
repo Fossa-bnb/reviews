@@ -108,13 +108,11 @@ describe('<App /> Component', () => {
       searchResults: [],
       searchParams: 'Nihil',
     });
-    console.log(wrapper.debug());
     expect(wrapper.find('ReviewsCount')).toHaveLength(1);
     expect(wrapper.find('OverallStars')).toHaveLength(1);
     expect(wrapper.find('Search')).toHaveLength(1);
     expect(wrapper.find('SearchSummary')).toHaveLength(1);
     expect(wrapper.find('ReviewsList')).toHaveLength(1);
-    console.log(wrapper.find('SearchSummary')).length();
   });
   it('should receieve a roomId as a prop', () => {
     expect(wrapper.prop('roomId')).toBe(3);

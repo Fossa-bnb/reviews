@@ -7,9 +7,9 @@ const Subrating = (props) => {
 
   return (
     <div className="container subrating">
-      <div className="row">
-        <div className="col">{props.category}</div>
-        <div className="col"> <ReactStars
+      <div className="row justify-content-between">
+        <div className="col-6">{props.category}</div>
+        <div className="col-4"> <ReactStars
           count={5}
           edit={false}
           half

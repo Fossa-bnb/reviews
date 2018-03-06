@@ -58,7 +58,7 @@ class App extends React.Component {
   render() {
     if (this.state.searchResults) {
       return (
-        <div className="container reviews">
+        <div className="container-fluid reviews">
           <div className="row">
             <div className="col-2">
               <ReviewsCount roomId={this.state.roomId} count={this.state.reviews.length} />
@@ -82,13 +82,13 @@ class App extends React.Component {
       return (
         <div className="container reviews">
           <div className="row header">
-            <div className="col-2">
+            <div className="col-3">
               <ReviewsCount roomId={this.state.roomId} count={this.state.reviews.length} />
             </div>
             <div className="col">
               <OverallStars stars={this.state.ratings.overall} />
             </div>
-            <div className="col-2">
+            <div className="col-4">
               <Search roomId={this.state.roomId} searchReviews={this.searchReviews} />
             </div>
           </div>

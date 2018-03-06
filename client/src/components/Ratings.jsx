@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Subrating from './Subrating';
 
 const Ratings = props => (
-  <div className="container">
+  <div className="container allRatings">
     <div className="row rating">
       <div className="col">
         <Subrating category="Accuracy" rating={props.ratings.accuracy} />

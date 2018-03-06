@@ -7,7 +7,9 @@ body {
   line-height: 22px;
   letter-spacing: 0.2px;
   font-weight: 300;
-  display: inline;
+  display: block;
+  width: 696px;
+  padding-left: 20px;
 }
 
 .ReviewsCount {
@@ -66,7 +68,8 @@ body {
 }
 
 .review {
-  margin: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   padding-bottom: 25px;
   border-bottom: 1px solid rgb(220, 224, 224);
 }
@@ -136,8 +139,34 @@ body {
   padding-top: 20px;
 }
 
+.container {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 .header {
   border-bottom: 1px solid rgb(220, 224, 224);
   padding-bottom: 20px;
   padding-top: 20px;
+  width: 676px;
+}
+
+.row {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.col {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.col-3 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.col-4 {
+  padding-left: 0px;
+  padding-right: 0px;
 }

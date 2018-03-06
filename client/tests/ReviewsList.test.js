@@ -89,6 +89,7 @@ describe('<ReviewsList /> Component', () => {
     expect(wrapper.state('page')).toEqual(1);
   });
   it('should change page state when updateCurrentPage is called', () => {
+    expect(wrapper.state('page')).toEqual(1);
     wrapper.instance().updateCurrentPage(2);
     expect(wrapper.state('page')).toEqual(2);
   });

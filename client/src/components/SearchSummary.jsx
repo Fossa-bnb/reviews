@@ -1,17 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from '../../styles/style.css';
 
 const SearchSummary = ({ numberOfResults, params, resetSearch }) => {
   if (numberOfResults === 0) {
     return (
-      <div className="container searchSummary">
-        <div className="row justify-content-between summaryText">
-          <div className="col-s-2 searchResultsSummary">
-            None of our guests have mentioned <span className="params">&quot;{params}&quot;</span>
+      <div className={[styles.container, styles.searchSummary]}>
+        <div className={[styles.row, styles.summaryText, 'justify-content-between']}>
+          <div className={['col-s-2', styles.searchResultsSummary]}>
+            None of our guests have mentioned
+            <span className={styles.params}> &quot;{params}&quot;</span>
           </div>
           <div className="col-s-2">
             <span
-              className="backToReviews"
+              className={styles.backToReviews}
               onClick={() => resetSearch()}
               onKeyUp={() => resetSearch()}
               role="button"
@@ -24,15 +26,15 @@ const SearchSummary = ({ numberOfResults, params, resetSearch }) => {
     );
   } else if (numberOfResults === 1) {
     return (
-      <div className="container searchSummary">
-        <div className="row justify-content-between summaryText">
-          <div className="col-s-2 searchResultsSummary">
+      <div className={[styles.container, styles.searchSummary]}>
+        <div className={[styles.row, styles.summaryText, 'justify-content-between']}>
+          <div className={['col-s-2', styles.searchResultsSummary]}>
             {numberOfResults} guest has mentioned
             <span className="params"> &quot;{params}&quot;</span>
           </div>
           <div className="col-s-2">
             <span
-              className="backToReviews"
+              className={styles.backToReviews}
               onClick={() => resetSearch()}
               onKeyUp={() => resetSearch()}
               role="button"
@@ -45,15 +47,15 @@ const SearchSummary = ({ numberOfResults, params, resetSearch }) => {
     );
   }
   return (
-    <div className="container searchSummary">
-      <div className="row justify-content-between summaryText">
-        <div className="col-s-2 searchResultsSummary">
+    <div className={[styles.container, styles.searchSummary]}>
+      <div className={[styles.row, styles.summaryText, 'justify-content-between']}>
+        <div className={['col-s-2', styles.searchResultsSummary]}>
           {numberOfResults} guests have mentioned
           <span className="params"> &quot;{params}&quot;</span>
         </div>
         <div className="col-s-2">
           <span
-            className="backToReviews"
+            className={styles.backToReviews}
             onClick={() => resetSearch()}
             onKeyUp={() => resetSearch()}
             role="button"

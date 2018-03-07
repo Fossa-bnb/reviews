@@ -1,19 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from '../../styles/style.css';
 
 const Review = props => (
-  <div className="container review">
-    <div className="container user" >
-      <div className="row">
-        <div className="col-s-2">
-          <img className="profilePhoto" src={props.review.userPhoto} alt="user" />
+  <div className={`${styles.container} review`}>
+    <div className={[styles.container, styles.user]} >
+      <div className={styles.row}>
+        <div className={styles.colS2}>
+          <img className={styles.profilePhoto} src={props.review.userPhoto} alt="user" />
         </div>
         <div className="col">
-          <div className="row">
-            <span className="username" >{props.review.userName}</span>
+          <div className={styles.row}>
+            <span className={styles.username} >{props.review.userName}</span>
           </div>
-          <div className="row">
-            <span className="reviewDate" >{props.review.date}</span>
+          <div className={styles.row}>
+            <span className={styles.reviewDate} >{props.review.date}</span>
           </div>
         </div>
       </div>

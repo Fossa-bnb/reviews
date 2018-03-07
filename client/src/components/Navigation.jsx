@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// import { pagination } from 'bootstrap-css';
 
 const Navigation = (props) => {
   const buttons = [];
@@ -14,7 +15,7 @@ const Navigation = (props) => {
   }
   return (
     <nav aria-label="reviews navigation">
-      <ul className="pagination">
+      <ul className="pagination" >
         {buttons}
       </ul>
     </nav>

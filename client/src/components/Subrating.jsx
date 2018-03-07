@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactStars from 'react-stars';
+import styles from '../../styles/style.css';
 
 const Subrating = (props) => {
   const roundedStars = Math.round(props.rating * 2) / 2;
 
   return (
-    <div className="container subrating">
-      <div className="row justify-content-between">
-        <div className="col-6">{props.category}</div>
-        <div className="col-4"> <ReactStars
+    <div className={[styles.container, 'subrating']}>
+      <div className={[styles.row, 'justify-content-between']}>
+        <div className={styles.col6}>{props.category}</div>
+        <div className={styles.col4}> <ReactStars
           count={5}
           edit={false}
           half

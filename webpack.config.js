@@ -5,7 +5,7 @@ const distDirectory = path.join(__dirname, '/client/dist');
 module.exports = {
   entry: [
     'react-hot-loader/patch',
-    './client/src/index.jsx',
+    './client/src/components/App.jsx',
   ],
   module: {
     rules: [
@@ -13,6 +13,14 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+      },
+      {
+        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        loader: 'url-loader?limit=100000',
       },
     ],
   },

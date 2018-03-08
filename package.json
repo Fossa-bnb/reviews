@@ -21,7 +21,8 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "database": "psql postgres"
+    "database": "psql postgres",
+    "create-db": "psql postgres -f ./database/schema.sql && knex migrate:latest && knex seed:run"
   },
   "jest": {
     "setupFiles": [

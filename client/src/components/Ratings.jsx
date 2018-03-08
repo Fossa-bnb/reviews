@@ -1,35 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { grid } from 'bootstrap-css';
 import Subrating from './Subrating';
-
 import styles from '../../styles/style.css';
 
 const Ratings = props => (
-  <div styleName="container" className={`${styles.container} allRatings`}>
-    <div styleName="row" className={[styles.rating]}>
-      <div styleName="col" >
-        <Subrating category="Accuracy" rating={props.ratings.accuracy} />
-      </div>
-      <div styleName="col" >
-        <Subrating category="Check In" rating={props.ratings.checkIn} />
-      </div>
+  <div className={styles.ratings} >
+    <div className={styles.ratingcolumn} >
+      <Subrating category="Accuracy" rating={props.ratings.accuracy} />
+      <Subrating category="Check In" rating={props.ratings.checkIn} />
+      <Subrating category="Value" rating={props.ratings.value} />
     </div>
-    <div className={[styles.rating, styles.row]}>
-      <div className={styles.col}>
-        <Subrating category="Cleanliness" rating={props.ratings.cleanliness} />
-      </div>
-      <div className={styles.col}>
-        <Subrating category="Communication" rating={props.ratings.communication} />
-      </div>
-    </div>
-    <div className={[styles.rating, styles.row]}>
-      <div className={styles.col}>
-        <Subrating category="Location" rating={props.ratings.location} />
-      </div>
-      <div className={styles.col}>
-        <Subrating category="Value" rating={props.ratings.value} />
-      </div>
+    <div className={styles.ratingcolumn}>
+      <Subrating category="Cleanliness" rating={props.ratings.cleanliness} />
+      <Subrating category="Communication" rating={props.ratings.communication} />
+      <Subrating category="Location" rating={props.ratings.location} />
+
     </div>
   </div>
 );

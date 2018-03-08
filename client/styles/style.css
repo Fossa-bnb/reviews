@@ -12,6 +12,30 @@ body {
   padding-left: 20px;
 }
 
+.header-container {
+  display:flex;
+  flex-direction: row;
+}
+
+.ratings {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.ratingcolumn {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 0px;
+}
+
+.ratingrow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .ReviewsCount {
   font-weight: 700;
   margin: 0px;
@@ -24,6 +48,14 @@ body {
   line-height: 30px;
   letter-spacing: -0.6px;
 }
+
+.subrating {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
 
 .profilePhoto {
   height: 48px;
@@ -68,10 +100,18 @@ body {
 }
 
 .review {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  padding-bottom: 25px;
-  border-bottom: 1px solid rgb(220, 224, 224);
+  display: flex;
+  flex-direction: column;
+}
+
+.reviewhead {
+  display: flex;
+  flex-direction: row;
+}
+
+.reviewinfo {
+  display: flex;
+  flex-direction: column;
 }
 
 .searchInput {

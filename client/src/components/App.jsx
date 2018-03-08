@@ -29,7 +29,6 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    // axios.get(`http://localhost:3001/rooms/${this.state.roomId}/reviews`)
     axios({
       method: 'get',
       url: `http://localhost:3001/rooms/${this.state.roomId}/reviews`,
@@ -65,8 +64,8 @@ class App extends React.Component {
   render() {
     if (this.state.searchResults) {
       return (
-        <div className={['container-fluid', 'review']}>
-          <div className={styles.row}>
+        <div className="review">
+          <div className={styles['header-container']}>
             <div className={styles.col2}>
               <ReviewsCount roomId={this.state.roomId} count={this.state.reviews.length} />
             </div>
@@ -87,8 +86,8 @@ class App extends React.Component {
       );
     } else if (this.state.reviews && this.state.ratings) {
       return (
-        <div className={[styles.container, 'reviews']} >
-          <div className={[styles.row, styles.header]}>
+        <div className="reviews" >
+          <div className={styles['header-container']}>
             <div className={styles.col3}>
               <ReviewsCount roomId={this.state.roomId} count={this.state.reviews.length} />
             </div>

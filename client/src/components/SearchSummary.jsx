@@ -30,7 +30,7 @@ const SearchSummary = ({ numberOfResults, params, resetSearch }) => {
         <div className={[styles.row, styles.summaryText, 'justify-content-between']}>
           <div className={['col-s-2', styles.searchResultsSummary]}>
             {numberOfResults} guest has mentioned
-            <span className="params"> &quot;{params}&quot;</span>
+            <span className={styles.params}> &quot;{params}&quot;</span>
           </div>
           <div className="col-s-2">
             <span
@@ -47,22 +47,20 @@ const SearchSummary = ({ numberOfResults, params, resetSearch }) => {
     );
   }
   return (
-    <div className={[styles.container, styles.searchSummary]}>
-      <div className={[styles.row, styles.summaryText, 'justify-content-between']}>
-        <div className={['col-s-2', styles.searchResultsSummary]}>
-          {numberOfResults} guests have mentioned
-          <span className="params"> &quot;{params}&quot;</span>
-        </div>
-        <div className="col-s-2">
-          <span
-            className={styles.backToReviews}
-            onClick={() => resetSearch()}
-            onKeyUp={() => resetSearch()}
-            role="button"
-            tabIndex="0"
-          >Back to all reviews
-          </span>
-        </div>
+    <div className={styles.searchSummary}>
+      <div>
+        {numberOfResults} guests have mentioned
+        <span className={styles.params}> &quot;{params}&quot;</span>
+      </div>
+      <div>
+        <span
+          className={styles.backToReviews}
+          onClick={() => resetSearch()}
+          onKeyUp={() => resetSearch()}
+          role="button"
+          tabIndex="0"
+        >Back to all reviews
+        </span>
       </div>
     </div>
   );

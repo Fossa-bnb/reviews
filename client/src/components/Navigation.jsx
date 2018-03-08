@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // import { pagination } from 'bootstrap-css';
 import Bootstrap from '../../styles/bootstrap.css';
+import styles from '../../styles/style.css';
+
 
 const Navigation = (props) => {
   const buttons = [];
@@ -15,11 +17,13 @@ const Navigation = (props) => {
     buttons.push(newBtn);
   }
   return (
-    <nav aria-label="reviews navigation">
-      <ul className={Bootstrap.pagination} >
-        {buttons}
-      </ul>
-    </nav>
+    <div className={styles.pagenavigation} >
+      <nav aria-label="reviews navigation">
+        <ul className={Bootstrap.pagination} >
+          {buttons}
+        </ul>
+      </nav>
+    </div>
   );
 };
 

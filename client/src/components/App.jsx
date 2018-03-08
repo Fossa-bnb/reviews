@@ -65,16 +65,12 @@ class App extends React.Component {
     if (this.state.searchResults) {
       return (
         <div className="review">
-          <div className={styles['header-container']}>
-            <div className={styles.col2}>
+          <div className={styles.headercontainer}>
+            <div className={styles.roomsummary} >
               <ReviewsCount roomId={this.state.roomId} count={this.state.reviews.length} />
-            </div>
-            <div className={styles.col}>
               <OverallStars stars={this.state.ratings.overall} />
             </div>
-            <div className={styles.col2}>
-              <Search roomId={this.state.roomId} searchReviews={this.searchReviews} />
-            </div>
+            <Search roomId={this.state.roomId} searchReviews={this.searchReviews} />
           </div>
           <SearchSummary
             numberOfResults={this.state.searchResults.length}
@@ -86,17 +82,13 @@ class App extends React.Component {
       );
     } else if (this.state.reviews && this.state.ratings) {
       return (
-        <div className="reviews" >
-          <div className={styles['header-container']}>
-            <div className={styles.col3}>
+        <div className="review">
+          <div className={styles.headercontainer}>
+            <div className={styles.roomsummary} >
               <ReviewsCount roomId={this.state.roomId} count={this.state.reviews.length} />
-            </div>
-            <div className={styles.col}>
               <OverallStars stars={this.state.ratings.overall} />
             </div>
-            <div className={styles.col4}>
-              <Search roomId={this.state.roomId} searchReviews={this.searchReviews} />
-            </div>
+            <Search roomId={this.state.roomId} searchReviews={this.searchReviews} />
           </div>
           <Ratings roomId={this.state.roomId} ratings={this.state.ratings} />
           <ReviewsList reviews={this.state.reviews} />

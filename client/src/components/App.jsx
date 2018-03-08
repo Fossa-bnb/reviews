@@ -29,9 +29,10 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    const port = process.env.PORT;
     axios({
       method: 'get',
-      url: `http://localhost:3001/rooms/${this.state.roomId}/reviews`,
+      url: `http://localhost:${port}/rooms/${this.state.roomId}/reviews`,
       responseType: 'stream',
     })
       .then((response) => {
